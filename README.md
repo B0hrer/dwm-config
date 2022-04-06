@@ -7,9 +7,9 @@ My DWM config files
 
 To install my DWM and configs, you will have to follow this guide.
 
-First, clone the repository into /usr/local.
+First, clone the repository.
 ```
-cd /usr/local && sudo git clone https://github.com/BigAnteater/dwm-config && cd dwm-config
+sudo git clone https://github.com/B0hrer/dwm-config && cd dwm-config
 ```
 Then run the installation script.
 ```
