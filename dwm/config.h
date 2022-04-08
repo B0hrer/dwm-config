@@ -1,5 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
+#include <X11/XF86keysym.h>
+
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel size of windows */
 static const unsigned int gappx     = 5;        /* gaps size between windows */
@@ -80,6 +82,8 @@ static const char *termcmd[]  = { "alacritty", NULL };
 static const char *upvol[]   = { "amixer", "-q", "set", "Master", "5%+", "unmute", NULL };
 static const char *downvol[] = { "amixer", "-q", "set", "Master", "5%-", "unmute", NULL };
 static const char *mutevol[] = { "amixer", "-q", "set", "Master", "toggle", NULL };
+static const char *upbright[] = { "light", "-A", "5", NULL };
+static const char *downbright[] = { "light", "-U", "5", NULL };
 
 #include "shiftview.c"
 static char *endx[] = { "/bin/sh", "-c", "endx", "externalpipe", NULL };
@@ -117,6 +121,13 @@ static Key keys[] = {
     { MODKEY,                       XK_F8,     spawn,          {.v = upvol   } },
     { MODKEY,                       XK_F7,     spawn,          {.v = downvol } },
     { MODKEY,                       XK_F5,     spawn,          {.v = mutevol } },
+    { 0,              XF86XK_AudioLowerVolume, spawn,	       {.v = downvol } },
+    { 0,              XF86XK_AudioMute,        spawn,	       {.v = mutevol } },
+    { 0,              XF86XK_AudioRaiseVolume, spawn, 	       {.v = upvol   } },
+    { 0,              XF86XK_MonBrightnessUp,   spawn, 	       {.v = upbright   } },
+    { 0,              XF86XK_MonBrightnessDown, spawn, 	       {.v = downbright } },
+	TAGKEYS(                        XK_1,                      0)
+	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
