@@ -127,8 +127,6 @@ static Key keys[] = {
     { 0,              XF86XK_MonBrightnessUp,   spawn, 	       {.v = upbright   } },
     { 0,              XF86XK_MonBrightnessDown, spawn, 	       {.v = downbright } },
 	TAGKEYS(                        XK_1,                      0)
-	TAGKEYS(                        XK_1,                      0)
-	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
 	TAGKEYS(                        XK_4,                      3)
