@@ -43,6 +43,10 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "Chromium", NULL,       NULL,       1 << 2,  	    0,           -1 },
+	{ "Steam",    NULL,       NULL,       1 << 3,  	    0,           -1 },
+	{ "obs",      NULL,       NULL,       1 << 3,  	    0,            1 },
+	{ "discord",  NULL,       NULL,       1 << 4,  	    0,            1 },
 };
 
 /* layout(s) */
@@ -76,8 +80,11 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *monitor[] = { "/usr/bin/htop", NULL };
 //sets st as the default terminal
 //static const char *termcmd[]  = { "st", NULL };
-//sets urxvt as the default terminal
+//sets alacritty as the default terminal
 static const char *termcmd[]  = { "alacritty", NULL };
+//custom commands
+static const char *explorecmd[]  = { "nautilus", NULL };
+static const char *browsecmd[]  = { "chromium", NULL };
 //volume controls
 static const char *upvol[]   = { "amixer", "-q", "set", "Master", "5%+", "unmute", NULL };
 static const char *downvol[] = { "amixer", "-q", "set", "Master", "5%-", "unmute", NULL };
@@ -91,6 +98,8 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,	                    XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,	                XK_e,	   spawn,          {.v = explorecmd } },
+	{ MODKEY,	                XK_c,	   spawn,          {.v = browsecmd } },
 	{ MODKEY,                       XK_t,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
