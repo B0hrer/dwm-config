@@ -85,10 +85,12 @@ static const char *termcmd[]  = { "alacritty", NULL };
 //custom commands
 static const char *explorecmd[]  = { "nautilus", NULL };
 static const char *browsecmd[]  = { "chromium", NULL };
+static const char *powercmd[]  = { "scripts/powermenu.sh", NULL };
 //volume controls
 static const char *upvol[]   = { "amixer", "-q", "set", "Master", "5%+", "unmute", NULL };
 static const char *downvol[] = { "amixer", "-q", "set", "Master", "5%-", "unmute", NULL };
 static const char *mutevol[] = { "amixer", "-q", "set", "Master", "toggle", NULL };
+//brightness controls
 static const char *upbright[] = { "light", "-A", "5", NULL };
 static const char *downbright[] = { "light", "-U", "5", NULL };
 
@@ -98,6 +100,7 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,	                    XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY|ShiftMask,             XK_Escape, spawn,          {.v = powercmd } },
 	{ MODKEY,	                XK_e,	   spawn,          {.v = explorecmd } },
 	{ MODKEY,	                XK_c,	   spawn,          {.v = browsecmd } },
 	{ MODKEY,                       XK_t,      togglebar,      {0} },
