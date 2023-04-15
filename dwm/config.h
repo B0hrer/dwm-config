@@ -42,7 +42,7 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "firefox",  NULL,       NULL,       1 << 2,       0,           -1 },
 	{ "Chromium", NULL,       NULL,       1 << 2,  	    0,           -1 },
 	{ "Steam",    NULL,       NULL,       1 << 3,  	    0,           -1 },
 	{ "obs",      NULL,       NULL,       1 << 3,  	    0,            1 },
@@ -85,7 +85,8 @@ static const char *monitor[] = { "/usr/bin/htop", NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 //custom commands
 static const char *explorecmd[]  = { "nautilus", NULL };
-static const char *browsecmd[]  = { "chromium", NULL };
+static const char *browsecmd[]  = { "firefox", NULL };
+//static const char *browsecmd[]  = { "chromium", NULL };
 static const char *powercmd[]  = { "scripts/powermenu.sh", NULL };
 //volume controls
 static const char *upvol[]   = { "amixer", "-q", "set", "Master", "5%+", "unmute", NULL };
