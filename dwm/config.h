@@ -14,7 +14,7 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 //static const char *fonts[]          = { "Jetbrains Mono-Medium:size=12", "fontawesome:size=12", "NotoColorEmoji:size=12" };
 static const char *fonts[]          = { "Jetbrains Mono-Medium:size=12", "Font Awesome 5 Brands:size=12", "fontawesome:size=12", "NotoColorEmoji:size=12" };
-static const char dmenufont[]       = "Jetbrains Mono-Medium:size=11";
+static const char dmenufont[]       = "Jetbrains Mono-Medium:size=12";
 //background color
 static const char col_gray1[]       = "#222222";
 //inactive window border color
@@ -47,6 +47,7 @@ static const Rule rules[] = {
 	{ "Steam",    NULL,       NULL,       1 << 3,  	    0,           -1 },
 	{ "obs",      NULL,       NULL,       1 << 3,  	    0,            1 },
 	{ "discord",  NULL,       NULL,       1 << 4,  	    0,            1 },
+	{ "spotify",  NULL,       NULL,       1 << 5,  	    0,           -1 },
 };
 
 /* layout(s) */
@@ -93,6 +94,10 @@ static const char *mutevol[] = { "amixer", "-q", "set", "Master", "toggle", NULL
 //brightness controls
 static const char *upbright[] = { "light", "-A", "5", NULL };
 static const char *downbright[] = { "light", "-U", "5", NULL };
+//media controls
+static const char *medplaypausecmd[] = { "playerctl", "play-pause", NULL };
+static const char *mednextcmd[] = { "playerctl", "next", NULL };
+static const char *medprevcmd[] = { "playerctl", "previous", NULL };
 
 #include "shiftview.c"
 static char *endx[] = { "/bin/sh", "-c", "endx", "externalpipe", NULL };
@@ -138,7 +143,10 @@ static Key keys[] = {
     { 0,              XF86XK_AudioRaiseVolume, spawn, 	       {.v = upvol   } },
     { 0,              XF86XK_MonBrightnessUp,   spawn, 	       {.v = upbright   } },
     { 0,              XF86XK_MonBrightnessDown, spawn, 	       {.v = downbright } },
-	TAGKEYS(                        XK_1,                      0)
+{ 0, XF86XK_AudioPlay, spawn, {.v = medplaypausecmd } },
+{ 0, XF86XK_AudioNext, spawn, {.v = mednextcmd } },
+{ 0, XF86XK_AudioPrev, spawn, {.v = medprevcmd } },
+    	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
 	TAGKEYS(                        XK_4,                      3)
