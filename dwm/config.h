@@ -44,7 +44,8 @@ static const Rule rules[] = {
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
 	{ "firefox",  NULL,       NULL,       1 << 2,       0,           -1 },
 	{ "Chromium", NULL,       NULL,       1 << 2,  	    0,           -1 },
-	{ "Steam",    NULL,       NULL,       1 << 3,  	    0,           -1 },
+	{ "Brave-browser", NULL,       NULL,       1 << 2,  	    0,           -1 },
+	{ "steam",    NULL,       NULL,       1 << 3,  	    0,           -1 },
 	{ "obs",      NULL,       NULL,       1 << 3,  	    0,            1 },
 	{ "discord",  NULL,       NULL,       1 << 4,  	    0,            1 },
 	{ "spotify",  NULL,       NULL,       1 << 5,  	    0,           -1 },
@@ -84,8 +85,8 @@ static const char *monitor[] = { "/usr/bin/htop", NULL };
 //sets alacritty as the default terminal
 static const char *termcmd[]  = { "alacritty", NULL };
 //custom commands
-static const char *explorecmd[]  = { "nautilus", NULL };
-static const char *browsecmd[]  = { "firefox", NULL };
+static const char *explorecmd[]  = { "pcmanfm", NULL };
+static const char *browsecmd[]  = { "brave", NULL };
 //static const char *browsecmd[]  = { "chromium", NULL };
 static const char *powercmd[]  = { "scripts/powermenu.sh", NULL };
 //volume controls
