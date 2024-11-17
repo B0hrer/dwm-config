@@ -16,15 +16,15 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Jetbrains Mono-Medium:size=12", "Font Awesome 5 Brands:size=12", "fontawesome:size=12", "NotoColorEmoji:size=12" };
 static const char dmenufont[]       = "Jetbrains Mono-Medium:size=12";
 //background color
-static const char col_gray1[]       = "#222222";
+static const char col_gray1[]       = "#282828";
 //inactive window border color
-static const char col_gray2[]       = "#444444";
+static const char col_gray2[]       = "#3c3836";
 //font color
-static const char col_gray3[]       = "#bbbbbb";
+static const char col_gray3[]       = "#ebdbb2";
 //current tag and current window font color
-static const char col_gray4[]       = "#eeeeee";
+static const char col_gray4[]       = "#ebdbb2";
 //Top bar second color (blue) and active window border color
-static const char col_cyan[]        = "#bb83f7";
+static const char col_cyan[]        = "#698d6a";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -83,9 +83,9 @@ static const char *monitor[] = { "/usr/bin/htop", NULL };
 //sets st as the default terminal
 //static const char *termcmd[]  = { "st", NULL };
 //sets alacritty as the default terminal
-static const char *termcmd[]  = { "alacritty", NULL };
+static const char *termcmd[]  = { "kitty", NULL };
 //custom commands
-static const char *explorecmd[]  = { "pcmanfm", NULL };
+static const char *explorecmd[]  = { "dolphin", NULL };
 static const char *browsecmd[]  = { "brave", NULL };
 //static const char *browsecmd[]  = { "chromium", NULL };
 static const char *powercmd[]  = { "scripts/powermenu.sh", NULL };
